@@ -1,30 +1,59 @@
-# Proyek Analisis Data: Bike Sharing Dataset
+# Proyek Analisis Data Penyewaan Sepeda (Bike Sharing Dataset)
 
-Analisis data penyewaan sepeda (*Bike Sharing* Capital Bikeshare), mencakup proses *data wrangling*, *EDA*, visualisasi, analisis lanjutan (*Clustering* / *Manual Grouping* kategori waktu), serta *dashboard* Streamlit interaktif.
-
-## Pertanyaan Bisnis
-
-- **Pertanyaan 1**: Bagaimana perbandingan rata-rata jumlah penyewaan sepeda harian berdasarkan kondisi cuaca dan musim sepanjang tahun 2011 hingga 2012?
-- **Pertanyaan 2**: Bagaimana perbedaan pola rata-rata penyewaan sepeda harian antara pengguna casual dan registered pada hari kerja dibandingkan hari libur/akhir pekan selama periode 2011–2012?
-- **Pertanyaan 3**: Pada kelompok kategori waktu manakah terjadi puncak rata-rata penyewaan sepeda per jam, serta bagaimana perbandingan proporsi pengguna casual dan registered di setiap kategori waktu tersebut selama tahun 2011–2012?
+Proyek ini merupakan analisis data pada **Bike Sharing Dataset** untuk memahami pola penyewaan sepeda berdasarkan kondisi cuaca, musim, tren pertumbuhan tahunan, serta waktu penggunaan, yang disajikan dalam bentuk notebook analisis dan dashboard interaktif menggunakan Streamlit.
 
 ## Struktur Direktori
-
-submission
-├── dashboard
-│   ├── main_data.csv
-│   └── dashboard.py
-├── data
+```text
+bike-sharing-analysis-main/
+├── dashboard/
+│   ├── dashboard.py
+│   └── main_data.csv
+├── data/
 │   ├── day.csv
 │   └── hour.csv
 ├── notebook.ipynb
 ├── README.md
 ├── requirements.txt
 └── url.txt
+```
 
-## Setup Environment
+## Setup Environment - Virtual Environment (venv)
+Pastikan terminal berada di direktori utama proyek (`bike-sharing-analysis-main/`), tempat berkas `requirements.txt` berada:
 
 ```bash
+cd bike-sharing-analysis-main
 python -m venv venv
-source venv/bin/activate      
+```
+
+Aktifkan virtual environment sesuai sistem operasi yang digunakan:
+- **Windows:**
+```bash
+venv\Scripts\activate
+```
+- **Linux / macOS:**
+```bash
+source venv/bin/activate
+```
+
+Instal seluruh dependensi dari direktori utama `bike-sharing-analysis-main/`:
+```bash
 pip install -r requirements.txt
+```
+
+## Setup Environment - Anaconda (Alternatif)
+Jika menggunakan Anaconda, jalankan perintah berikut dari direktori utama `bike-sharing-analysis-main/`:
+```bash
+conda create --name main-ds python=3.10
+conda activate main-ds
+pip install -r requirements.txt
+```
+
+## Menjalankan Notebook
+1. Buka dan import berkas `notebook.ipynb` ke dalam Google Colab atau Jupyter Notebook.
+2. Pastikan untuk menekan tombol **"Run All" / "Jalankan Semua"** agar seluruh sel analisis dan pembuatan dataset tereksekusi dengan benar.
+
+## Menjalankan Dashboard Streamlit secara Lokal
+Pastikan terminal berada di direktori utama `bike-sharing-analysis-main/` dan *environment* sudah aktif, lalu jalankan perintah berikut:
+```bash
+streamlit run dashboard/dashboard.py
+```
